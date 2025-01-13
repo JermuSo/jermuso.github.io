@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&family=Montserrat:ital@1&display=swap');
+
+/* Puhelin res */
+@media only screen and (max-width: 600px) {
+    section.content_center {
+        width: 80%;
+    }
+
+    footer {
+        max-width: 100%;
+
+    }
+
+    nav {
+        max-width: 90%;
+        position: fixed;
+        top: 0;
+    }
+}
+
+/* Sulava scroll linkeistä */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100%;
+    font-size: 100%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+
+}
+
+/* Background kuvan asetukset*/
+.bg {
+    display: inline-block;
+    min-height: 100%;
+    min-width: 100%;
+    background-image: url(../images/mountains-55067_strech.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    backdrop-filter: blur(5px) brightness(40%);
+}
+
+article.page {
+    max-width: 70%;
+    margin: 0 auto;
+    font-family: 'Lato';
+    padding: 0;
+}
+
+header {
+    color: #f2ff00;
+    font-size: 350%;
+    text-align: center;
+    font-family: 'Montserrat';
+    font-weight: bold;
+    margin: auto;
+    background-color: #000000;
+}
+
+/* Navigointipalkki ja sille muita muotoja alla*/
+nav {
+    position: sticky;
+    top: 0;
+    text-align: center;
+    width: 66.7%;
+    margin: auto;
+    background-color: #000000;
+    border: 2px #f2ff00 solid;
+    border-radius: 0px 0px 30px 30px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+nav .container {
+    width: 95%;
+    padding: 5px 15px;
+}
+
+nav .container ul li {
+    display: inline-block;
+    border-radius: 20px;
+}
+
+nav .container ul li a {
+    display: inline-block;
+    padding: 5px 30px;
+    text-decoration: none;
+    color: #f2ff00;
+
+}
+
+nav .container ul li.active {
+    background-color: #f2ff00;
+    border-radius: 30px;
+    transition: 0.4s;
+}
+
+nav .container ul li.active a {
+    color: #000000;
+}
+
+/* Nav-palkki loppuu*/
+
+footer {
+    font-size: 20px;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+
+/* Content section muotoilut*/
+section {
+    width: 100%;
+    overflow: visible;
+    margin: auto;
+    text-align: center;
+}
+
+section.content_center {
+    width: 65%;
+    margin: 80px auto;
+    border-radius: 15px;
+    text-align: center;
+    background-color: #000000;
+    border: 2px #f2ff00 solid;
+    padding: 40px 15px;
+}
+
+/* Kuvien specsit*/
+img {
+    max-width: 70%;
+    height: auto;
+    border-radius: 20px;
+    margin: 10px;
+}
+
+p {
+    font-size: 24px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 20px 64px;
+    color: #ffffff;
+}
+
+
+#quote {
+    color: white;
+    text-align: left;
+    margin: 30px 200px 50px 30px;
+    font-size: 20px;
+}
+
+/* Otiskoita*/
+h2 {
+    color: #f2ff00;
+    font-size: 32px;
+
+}
+
+h3 {
+    color: #f2ff00;
+    font-size: 24px;
+
+}
+
+h4 {
+    color: #f2ff00;
+    font-size: 20px;
+}
+
+/* Otsikot loppuu*/
+
+/* Sosisaaliset mediat ja sille muut muodot*/
+.fa {
+    float: left;
+    position: sticky;
+    top: 0;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px;
+    margin: 5px 10px;
+}
+
+.fa-linkedin {
+    color: #f2ff00;
+    border: 2px solid #f2ff00;
+    background-color: #000000;
+}
+
+.fa-at {
+    color: #f2ff00;
+    border: 2px solid #f2ff00;
+    background-color: #000000;
+}
+
+.fa-git {
+    color: #f2ff00;
+    border: 2px solid #f2ff00;
+    background-color: #000000;
+}
+
+
+.fa:hover {
+    opacity: 0.8;
+}
+
