@@ -1,0 +1,20 @@
+# Sivuston perusasetukset
+title: "Sivustoni nimi"
+description: "Kuvaus verkkosivustostani"
+author:
+  name: "Nimesi"
+  email: "sähköpostisi@esimerkki.com"
+
+# Remote theme -asetukset
+remote_theme: mmistakes/minimal-mistakes@4.24.0
+
+# Plugins
+plugins:
+  - jekyll-remote-theme
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Navigaatioasetukset (esimerkki)
+header_pages:
+  - about.md
