@@ -1,20 +1,19 @@
-# Sivuston perusasetukset
-title: "Sivustoni nimi"
-description: "Kuvaus verkkosivustostani"
+title: "Oma Sivusto"
+description: "Kuvaus sivustosta"
+baseurl: "" # Jos sivu ei ole alikansiossa
+url: "https://www.jeresoininen.fi" # Korvaa omalla sivusi URL-osoitteella
+
 author:
-  name: "Nimesi"
-  email: "sähköpostisi@esimerkki.com"
+  name: "Oma Nimi"
+  email: "sähköposti@example.com"
+  bio: "Lyhyt kuvaus itsestäsi"
+  avatar: "/path/to/avatar.jpg" # Lisää avatar tarvittaessa
 
-# Remote theme -asetukset
-remote_theme: mmistakes/minimal-mistakes@4.24.0
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "single"
 
-# Plugins
-plugins:
-  - jekyll-remote-theme
-  - jekyll-feed
-  - jekyll-sitemap
-  - jekyll-seo-tag
-
-# Navigaatioasetukset (esimerkki)
-header_pages:
-  - about.md
+# Teeman asetukset
+minimal_mistakes_skin: "default"
