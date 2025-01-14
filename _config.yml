@@ -1,19 +1,12 @@
+remote_theme: "mmistakes/minimal-mistakes"
+plugins:
+  - jekyll-remote-theme
+
 title: "Oma Sivusto"
 description: "Kuvaus sivustosta"
-baseurl: "" # Jos sivu ei ole alikansiossa
-url: "https://www.jeresoininen.fi" # Korvaa omalla sivusi URL-osoitteella
+baseurl: "" # jätä tyhjäksi, jos ei ole alikansioita
+url: "https://www.jeresoininen.fi" # korvaa omalla sivustosi URL:llä
 
 author:
-  name: "Oma Nimi"
-  email: "sähköposti@example.com"
-  bio: "Lyhyt kuvaus itsestäsi"
-  avatar: "/path/to/avatar.jpg" # Lisää avatar tarvittaessa
-
-defaults:
-  - scope:
-      path: ""
-    values:
-      layout: "single"
-
-# Teeman asetukset
-minimal_mistakes_skin: "default"
+  name: "Jere Soininen"
+  bio: "Olen kolmannen vuoden opiskelija joka erikoistuu data analytiikkaan päläläälälälä."
