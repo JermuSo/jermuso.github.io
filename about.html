@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About – Jere Soininen</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Sivun lataus fade
+    window.addEventListener('load', () => {
+      document.querySelector('main').style.opacity = '1';
+    });
+
+    document.querySelectorAll('a[href]').forEach(link => {
+      const target = link.getAttribute('href');
+      if (target && !target.startsWith('#') && !link.hasAttribute('target')) {
+        link.addEventListener('click', e => {
+          e.preventDefault();
+          document.querySelector('main').style.opacity = '0';
+          setTimeout(() => {
+            window.location.href = target;
+          }, 500);
+        });
+      }
+    });
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-900 text-white">
+  <!-- Navi headerissa -->
+  <header id="siteHeader"
+    class="sticky top-0 z-50 p-6 flex flex-col md:flex-row justify-between items-center border-b border-gray-700 bg-gray-900 shadow-md transition-all duration-300">
+    <h1 class="text-2xl font-bold tracking-wide text-white">Jere Soininen</h1>
+    <nav class="flex flex-wrap justify-center text-center gap-4 md:gap-6 text-base font-medium mt-4 md:mt-0">
+      <a href="index.html"
+        class="text-blue-400 hover:text-white border-b-2 border-transparent hover:border-blue-400 transition duration-300">Home</a>
+      <a href="skills.html"
+        class="text-blue-400 hover:text-white border-b-2 border-transparent hover:border-blue-400 transition duration-300">Skills</a>
+      <a href="about.html"
+        class="text-blue-400 hover:text-white border-b-2 border-transparent hover:border-blue-400 transition duration-300">About</a>
+    </nav>
+  </header>
+
+  <!-- Omakuva ja otsikko -->
+  <main class="max-w-4xl mx-auto px-6 py-10 transition-opacity duration-500 opacity-0">
+    <div class="mx-auto mb-6 w-48 h-48 rounded-full bg-gradient-to-tr from-indigo-500 to-fuchsia-500 p-[3px] shadow-lg">
+      <img src="assets/soininenjere_image2.webp" width="192" height="192" alt="Profile"
+        class="w-full h-full object-cover rounded-full" />
+    </div>
+
+    <h2 class="text-3xl font-semibold text-center mb-10">Who I am, what I like?</h2>
+
+    <div class="space-y-10">
+
+      <!-- Who I Am -->
+      <div class="bg-gradient-to-r from-blue-500 to-purple-500 p-[2px] rounded-xl shadow-lg">
+        <div class="bg-gray-800 rounded-[10px] h-full md:flex overflow-hidden">
+          <div class="md:w-1/2 h-72">
+            <img src="assets/aukio.webp" loading="lazy" alt="Who I Am"
+              class="w-full h-full object-cover rounded-l-[10px] md:rounded-r-none">
+          </div>
+          <div class="md:w-1/2 p-6 flex items-center">
+            <p class="text-gray-300 leading-relaxed">
+              I'm a 23-year-old IT engineering student who’s curious by nature and always ready to learn something
+              new...
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Vapaa-aika -->
+      <div class="bg-gradient-to-r from-emerald-500 to-cyan-500 p-[2px] rounded-xl shadow-lg">
+        <div class="bg-gray-800 rounded-[10px] h-full md:flex md:flex-row-reverse overflow-hidden">
+          <div class="md:w-1/2 h-72">
+            <img src="assets/maantie.webp" loading="lazy" alt="Interests"
+              class="w-full h-full object-cover rounded-r-[10px]">
+          </div>
+          <div class="md:w-1/2 p-6 flex items-center">
+            <p class="text-gray-300 leading-relaxed">
+              Outside of studies, I enjoy spending time with good games, great TV series, fresh air, and friends. I'm
+              also known to appreciate a good craft beer every now and then 🍺. Technology fascinates me, but balance is
+              key – so you’ll often find me outdoors, walking, exploring or just enjoying the moment.
+            </p>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Vapaa-aika2 -->
+      <div class="bg-gradient-to-r from-pink-500 to-yellow-500 p-[2px] rounded-xl shadow-lg">
+        <div class="bg-gray-800 rounded-[10px] h-full md:flex overflow-hidden">
+          <div class="md:w-1/2 h-72">
+            <img src="assets/maasto.webp" loading="lazy" alt="Sports" class="w-full h-full object-cover">
+          </div>
+          <div class="md:w-1/2 p-6 flex items-center">
+            <p class="text-gray-300 leading-relaxed">
+              I’ve always been passionate about sports. Gym workouts, running, and various ball games are a part of my
+              weekly rhythm. In recent years, cycling has become a big part of my life – both on roads and rugged
+              trails. It’s not just about exercise – it’s freedom, focus, and fun all rolled into one.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+
+ <!-- Somelinkit -->
+  <section class="text-center mt-12">
+    <h3 class="text-xl font-semibold mb-4">Find me online!</h3>
+    <ul class="flex justify-center gap-6 items-center text-white">
+      <li>
+        <a href="https://github.com/JermuSo" target="_blank" rel="noopener noreferrer">
+          <img src="assets/icon-github.svg" alt="GitHub" width="28" height="28" class="hover:scale-110 transition" />
+        </a>
+      </li>
+      <li>
+        <a href="https://www.linkedin.com/in/jere-soininen/" target="_blank" rel="noopener noreferrer">
+          <img src="assets/icons8-linkedin-96.png" alt="LinkedIn" width="28" height="28"
+            class="hover:scale-110 transition" />
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <footer class="text-center p-4 border-t border-gray-700 text-sm text-gray-400 mt-10">
+    <p>© 2025 Jere Soininen</p>
+  </footer>
+  <script>
+    // headerin animaatio scrollatessa
+    const header = document.getElementById('siteHeader');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 30) {
+        header.classList.add('py-3', 'shadow-lg', 'backdrop-blur-md');
+      } else {
+        header.classList.remove('py-3', 'shadow-lg', 'backdrop-blur-md');
+        header.classList.add('p-6');
+      }
+    });
+  </script>
+  <script>
+    const currentPath = window.location.pathname.split('/').pop();
+    document.querySelectorAll('nav a').forEach(link => {
+      if (link.getAttribute('href') === currentPath) {
+        link.classList.add('font-bold', 'text-white', 'border-b-2', 'border-blue-400');
+      }
+    });
+  </script>
+
+  <!-- Seuraavan sivun float arrow -->
+  <a href="index.html" id="nextPageBtn"
+    class="fixed bottom-24 right-6 bg-blue-500 hover:bg-blue-600 text-white p-3 rounded-full shadow-lg transition-opacity duration-300 opacity-0 z-50"
+    aria-label="Next page">
+    ➤
+  </a>
+
+  <script>
+    // JS script nuolelle
+    const nextPageBtn = document.getElementById('nextPageBtn');
+
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const docHeight = document.documentElement.scrollHeight;
+
+      const isShortPage = docHeight <= windowHeight + 500;
+      const scrollPercent = (scrollTop + windowHeight) / docHeight;
+
+      const shouldShow = isShortPage
+        ? scrollTop > 30
+        : scrollPercent > 0.8;
+
+      if (shouldShow) {
+        nextPageBtn.classList.remove('opacity-0');
+        nextPageBtn.classList.add('opacity-100');
+      } else {
+        nextPageBtn.classList.remove('opacity-100');
+        nextPageBtn.classList.add('opacity-0');
+      }
+    });
+  </script>
+
+</body>
+
+</html>

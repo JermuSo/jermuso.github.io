@@ -1,134 +1,324 @@
-<!--"https://icons8.com/ for icons-->
-<!--inspiration https://www.freecodecamp.org/news/build-a-simple-portfolio-website-with-html-and-css/-->
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles/styles.css" />
-    <title>Jere Soininen - Portfolio</title>
-  </head>
-  <body>
-    <header class="site_header">
-      <div class="wrapper_inner">
-        <nav class="site_header_nav">
-          <ul role="list" class="flex flex_center">
-            <li><a href="#0">HOME</a></li>
-            <li><a href="#about">ABOUT</a></li>
-            <li><a href="#projects">PROJECTS</a></li>
-          </ul>
+    <title>Portfolio – Jere Soininen</title>
+    <link rel="icon" type="image/svg+xml" href="assets/jerelogo1svg.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+    <script>
+        // Sivun lataus fade
+        window.addEventListener('load', () => {
+            document.getElementById('heroImage').style.opacity = '1';
+            document.querySelector('main').style.opacity = '1';
+        });
+
+        document.querySelectorAll('a[href]').forEach(link => {
+            const target = link.getAttribute('href');
+            if (target && !target.startsWith('#') && !link.hasAttribute('target')) {
+                link.addEventListener('click', e => {
+                    e.preventDefault();
+                    document.querySelector('main').style.opacity = '0';
+                    setTimeout(() => {
+                        window.location.href = target;
+                    }, 500);
+                });
+            }
+        });
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-white">
+    <!-- Navi headerissa -->
+    <header id="siteHeader"
+        class="sticky top-0 z-50 p-6 flex flex-col md:flex-row justify-between items-center border-b border-gray-700 bg-gray-900 shadow-md transition-all duration-300">
+        <h1 class="text-2xl font-bold tracking-wide text-white">Jere Soininen</h1>
+        <nav class="flex flex-wrap justify-center text-center gap-4 md:gap-6 text-base font-medium mt-4 md:mt-0">
+            <a href="index.html"
+                class="text-blue-400 hover:text-white border-b-2 border-transparent hover:border-blue-400 transition duration-300">Home</a>
+            <a href="skills.html"
+                class="text-blue-400 hover:text-white border-b-2 border-transparent hover:border-blue-400 transition duration-300">Skills</a>
+            <a href="about.html"
+                class="text-blue-400 hover:text-white border-b-2 border-transparent hover:border-blue-400 transition duration-300">About</a>
         </nav>
-      </div>
     </header>
-    <main>
-      <section id="hero">
-        <div class="wrapper">
-          <div class="wrapper_inner">
-            <div class="text_center hero_content">
-              <h1 class="h2">Jere Soininen</h1>
-              <p class="h5">Bachelor of Engineering Student & Data Analyst Trainee</p>
-            </div>
-          </div>
-          <ul role="list" class="flex flex_between hero_social">
-            <address>Jyväskylä, FI</address>
-            <ul role="list" class="flex">
-              <li>Find me online!</li>
-              <li>
-                <a href="https://github.com/JermuSo" target="_blank">
-                  <img src="assets/icon-github.svg" alt="GitHub" width="24" height="24" />
-                </a>
-              </li>
-              <li>
-                <a href="https://www.linkedin.com/in/jere-soininen/" target="_blank">
-                  <img src="assets/icons8-linkedin-96.png" alt="LinkedIn" width="24" height="24" />
-                </a>
-              </li>
-            </ul>
-          </ul>
+
+    <!-- Fading-taustakuva heti headerin jälkeen -->
+    <div id="heroImage" class="relative -mb-16 transition-opacity duration-500 opacity-0">
+        <img src="assets/aida_ver3.webp" alt="Abstract data graphic"
+            class="w-full h-48 md:h-64 lg:h-72 object-cover opacity-80 brightness-50" />
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-gray-900"></div>
+    </div>
+
+
+    <!-- Hero-alue: esittelyteksti ja animaatio -->
+    <main class="flex flex-col items-center text-center px-6 py-16 mb-0 transition-opacity duration-500 opacity-0">
+        <h2 class="text-3xl md:text-4xl font-semibold mb-4 animate-fade-in">Hi! I'm Jere 👋</h2>
+        <p class="text-lg md:text-xl text-gray-300 mb-6 max-w-md">
+            I'm a third-year IT engineering student specializing in data analytics. This portfolio is a space to
+            showcase my interests and growth in the world of data.
+        </p>
+
+        <!-- Lottie-animaatio hero-nappien paikalle -->
+         <!-- https://lottiefiles.com/free-animation/data-scanning-9P3AsKKZ59 -->
+        <div class="w-full flex justify-center items-center">
+            <lottie-player src="assets/Animation - 1745241278650.json" background="transparent" speed="0.8"
+                style="width: 300px; height: 300px" loop autoplay>
+            </lottie-player>
         </div>
-      </section>
-      <section id="about">
-        <div class="wrapper">
-          <div class="text_center">
-            <h2>
-              I am a motivated and enthusiastic junior data analyst and developer in training. 
-            <br>
-            <br>
-            I am actively seeking new challenges across Finland.
-            </h2>
-          </div>
-          <div class="wrapper_inner">
-            <div class="about_content flex flex_around">
-              <figure class="about_figure text_center">
-                <img width="600px" height="800px" src="assets/soininenjere_image2.jpeg" alt="Jere Soininen" class="about_img" />
-                <figcaption class="about_caption">This is me :^)</figcaption>
-              </figure>
-              <p class="h5">
-                I am a 23-year-old engineering student living in Jyväskylä, originally from Kouvola. <br> Passionate about sports and committed to continuously improving my professional skills.
-                <br><br> Experienced network technician transitioning to data analytics and machine learning. 
-                <br><br>Skilled in Python, data preprocessing, and applying machine learning to real-world projects at a junior level. Passionate about leveraging analytical skills to solve complex problems and drive data-driven decisions.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section id="projects">
-        <div class="wrapper_inner">
-          <div class="text_center">
-            <h4 class="h5">
-              Below are some of the projects I have worked on, demonstrating my skills in data analytics, machine learning, and programming.
-            </h4>
-            <ul role="list" class="project_list">
-              <li>
-                <a href="https://github.com/JermuSo/aida_project_group1" target="_blank" rel="noopener noreferrer">
-                  <img src="assets/icons8-car-100.png" alt="Used Car Price Prediction" />
-                  <p>Used Car Price Prediction</p>
-                </a>
-              </li>
-              <li>
-                <a href="https://github.com/JermuSo/deeplearning_jamk/blob/main/osa_4/harjoitustyo.ipynb" target="_blank" rel="noopener noreferrer">
-                  <img src="assets/icons8-stock-100.png" alt="Football Market Value Prediction" />
-                  <p>Football Market Value Prediction</p>
-                </a>
-              </li>
-              <li>
-                <a href="https://github.com/JermuSo/machinelearning_jamk/tree/main/tehtavat" target="_blank" rel="noopener noreferrer">
-                  <img src="assets/icons8-machine-learning-100.png" alt="ML exercises" />
-                  <p>Machine Learning JAMK</p>
-                </a>
-              </li>
-              <li>
-                <a href="https://github.com/JermuSo/deeplearning_jamk" target="_blank" rel="noopener noreferrer">
-                  <img src="assets/icons8-deep-learning-100.png" alt="DL exercises" />
-                  <p>Deep Learning JAMK</p>
-                </a>
-              </li>
-              <li>
-                <a href="https://github.com/JermuSo/algo_training" target="_blank" rel="noopener noreferrer">
-                  <img src="assets/icons8-python-100.png" alt="Python algos" />
-                  <p>Python Algos</p>
-                </a>
-              </li>
-              <li>
-                <a href="https://github.com/JermuSo" target="_blank" rel="noopener noreferrer">
-                  <img src="assets/icons8-mind-100.png" alt="Python algos" />
-                  <p>Continuously improving and working on new projects</p>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>  
-      <footer>
-        <section id="footer">
-          <div class="wrapper">
-            <div class="text_right">
-              <p> 2025 Jere Soininen</p>
-            </div>
-          </div>
-        </section>
-      </footer>
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js" defer></script>
+
+
     </main>
-  </body>
+
+    <!-- Datasektio: otsikko, kuvaukset ja datanäppäimet -->
+    <div class="min-h-[80vh] flex flex-col justify-center">
+        <section class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-2xl font-bold mb-4">📊 Why study data?</h2>
+            <p class="text-gray-300 mb-4">
+                I'm fascinated by how data reveals hidden patterns, supports better decisions, and turns raw information
+                into stories we can understand. Working with data feels like solving a puzzle – and each insight has the
+                potential to change how we see the world.
+            </p>
+            <p class="text-gray-400 mb-6">
+                Below you can explore three datasets to visualize some insights – fictional or real, each chart tells a
+                story.
+            </p>
+
+            <!-- Dataset buttons -->
+            <div class="flex flex-wrap justify-center gap-4 mb-6">
+                <button onclick="loadDataset('population')"
+                    class="bg-emerald-500 hover:bg-emerald-600 px-4 py-2 rounded font-medium">🌍 Population</button>
+                <button onclick="loadDataset('electricity')"
+                    class="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded font-medium">⚡ Electricity Use</button>
+                <button onclick="loadDataset('languages')"
+                    class="bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded font-medium">🐍 Python vs R</button>
+            </div>
+
+            <!-- Placeholder ja Chart.js -kaavioalue -->
+            <div id="chartContainer"
+                class="opacity-100 transition-opacity duration-700 ease-in-out bg-gray-800 rounded-lg p-6 w-full max-w-2xl mx-auto">
+                <div id="chartPlaceholder" class="flex flex-col items-center justify-center gap-4 text-gray-400 italic">
+                    <div class="w-64 h-40 bg-gray-700/50 rounded-md animate-pulse"></div>
+                    <p>Choose a dataset to see a chart.</p>
+                </div>
+                <div id="canvasWrapper"
+                    class="hidden w-full h-auto transition-opacity duration-500 ease-in-out opacity-0">
+                    <canvas id="chartCanvas" class="w-full h-full"></canvas>
+                </div>
+            </div>
+
+            <p id="insight" class="mt-6 italic min-h-[2rem] transition-opacity duration-500 ease-in-out opacity-100">
+            </p>
+            <p id="note"
+                class="text-sm text-gray-400 mt-4 min-h-[4rem] transition-opacity duration-500 ease-in-out opacity-100">
+            </p>
+        </section>
+    </div>
+
+
+    <!-- Linkit sosiaalisiin -->
+    <section class="text-center mt-12">
+        <h3 class="text-xl font-semibold mb-4">Find me online!</h3>
+        <ul class="flex justify-center gap-6 items-center text-white">
+            <li>
+                <a href="https://github.com/JermuSo" target="_blank" rel="noopener noreferrer">
+                    <img src="assets/icon-github.svg" alt="GitHub" width="28" height="28"
+                        class="hover:scale-110 transition" />
+                </a>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/in/jere-soininen/" target="_blank" rel="noopener noreferrer">
+                    <img src="assets/icons8-linkedin-96.png" alt="LinkedIn" width="28" height="28"
+                        class="hover:scale-110 transition" />
+                </a>
+            </li>
+        </ul>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="text-center p-4 border-t border-gray-700 text-sm text-gray-400 mt-10">
+        <p>© 2025 Jere Soininen</p>
+    </footer>
+
+    <script>
+        const ctx = document.getElementById('chartCanvas').getContext('2d');
+        let chart;
+        // Datasettien täyttö tiedoilla
+        const datasets = {
+            population: async () => {
+                const res = await fetch("data/population.json");
+                const data = await res.json();
+
+                return {
+                    type: "bar",
+                    labels: data.map(c => c.country),
+                    data: data.map(c => c.population),
+                    insight: "China and India dominate global population.",
+                    detail: "The dramatic growth in the population of Asia is the result of an increase in the number of people surviving the reproductive age.. This chart is based on preloaded JSON data. Date: 21.04.2025.",
+                    fictional: false
+                };
+            },
+            electricity: async () => {
+                return {
+                    type: 'line',
+                    labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                    data: [8500, 9100, 8900, 8700, 9200, 7400, 7100],
+                    insight: 'Electricity consumption clearly drops during the weekend compared to weekdays.',
+                    detail: 'This pattern often reflects reduced industrial activity and office use during weekends, shifting demand towards households.',
+                    fictional: true
+                };
+            },
+            languages: async () => {
+                return {
+                    type: 'pie',
+                    labels: ['Python', 'R', 'SQL', 'Excel'],
+                    data: [60, 20, 15, 5],
+                    insight: 'Python dominates research usage. Excel is still hanging in there!',
+                    detail: 'Python has grown due to its ease of use, powerful libraries (like pandas, scikit-learn) and vibrant community. R remains strong in academic statistics.',
+                    fictional: true
+                };
+            }
+        };
+        // Chart.js asetukset ja datan lataus painikkeiden mukaan
+        async function loadDataset(name) {
+            const chartContainer = document.getElementById('chartContainer');
+            const insightEl = document.getElementById('insight');
+            const noteEl = document.getElementById('note');
+            const wrapper = document.getElementById('canvasWrapper');
+
+            // Fade out kaikki
+            chartContainer.classList.remove('opacity-100');
+            chartContainer.classList.add('opacity-0');
+            insightEl.classList.remove('opacity-100');
+            insightEl.classList.add('opacity-0');
+            noteEl.classList.remove('opacity-100');
+            noteEl.classList.add('opacity-0');
+
+            // Odota että kaikki ovat täysin fadenneet
+            await new Promise(resolve => setTimeout(resolve, 400));
+
+            // Päivitä data
+            const chartData = await datasets[name]();
+
+            insightEl.innerText = chartData.insight;
+            noteEl.innerText = chartData.detail + (chartData.fictional ? ' * This dataset is fictional.' : '');
+
+            if (chart) chart.destroy();
+
+            document.getElementById('chartPlaceholder').classList.add('hidden');
+            wrapper.classList.remove('hidden');
+            wrapper.classList.remove('opacity-0');
+            wrapper.classList.add('opacity-100');
+
+            chart = new Chart(ctx, {
+                type: chartData.type,
+                data: {
+                    labels: chartData.labels,
+                    datasets: [{
+                        label: 'Data',
+                        data: chartData.data,
+                        backgroundColor: [
+                            'rgba(16, 185, 129, 0.7)',
+                            'rgba(59, 130, 246, 0.7)',
+                            'rgba(147, 51, 234, 0.7)',
+                            'rgba(251, 191, 36, 0.7)'
+                        ],
+                        borderColor: 'rgba(255, 255, 255, 0.3)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: { legend: { display: chartData.type !== 'bar' } },
+                    scales: chartData.type === 'pie' ? {} : {
+                        y: {
+                            ticks: {
+                                callback: val => {
+                                    if (val >= 1_000_000_000) return `${val / 1_000_000_000} B`;
+                                    if (val >= 1_000_000) return `${val / 1_000_000} M`;
+                                    return val;
+                                }
+                            }
+                        }
+                    },
+                    animation: {
+                        duration: 800,
+                        easing: 'easeOutQuart'
+                    }
+                }
+            });
+
+            // Fade in kaikki samalla kertaa
+            chartContainer.classList.remove('opacity-0');
+            chartContainer.classList.add('opacity-100');
+            insightEl.classList.remove('opacity-0');
+            insightEl.classList.add('opacity-100');
+            noteEl.classList.remove('opacity-0');
+            noteEl.classList.add('opacity-100');
+        }
+    </script>
+    <script>
+        // Headerin muoto muuttuu vierittäessä
+        const header = document.getElementById('siteHeader');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 30) {
+                header.classList.add('py-3', 'shadow-lg', 'backdrop-blur-md');
+            } else {
+                header.classList.remove('py-3', 'shadow-lg', 'backdrop-blur-md');
+                header.classList.add('p-6');
+            }
+        });
+    </script>
+    <script>
+        // Korostaa aktiivisen navigointilinkin
+        const currentPath = window.location.pathname.split('/').pop();
+        document.querySelectorAll('nav a').forEach(link => {
+            if (link.getAttribute('href') === currentPath) {
+                link.classList.add('font-bold', 'text-white', 'border-b-2', 'border-blue-400');
+            }
+        });
+    </script>
+
+    <!-- Seuraavan sivun float arrow -->
+    <a href="skills.html" id="nextPageBtn"
+        class="fixed bottom-24 right-6 bg-blue-500 hover:bg-blue-600 text-white p-3 rounded-full shadow-lg transition-opacity duration-300 opacity-0 z-50"
+        aria-label="Next page">
+        ➤
+    </a>
+
+    <script>
+        // Näyttää nuolinapin, kun käyttäjä on vierittänyt alaspäin
+        const nextPageBtn = document.getElementById('nextPageBtn');
+
+        window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const docHeight = document.documentElement.scrollHeight;
+
+      const scrollPercent = (scrollTop + windowHeight) / docHeight;
+
+      if (scrollPercent > 0.7) {
+        nextPageBtn.classList.remove('opacity-0');
+        nextPageBtn.classList.add('opacity-100');
+      } else {
+        nextPageBtn.classList.remove('opacity-100');
+        nextPageBtn.classList.add('opacity-0');
+      }
+    });
+    </script>
+</body>
+
 </html>
